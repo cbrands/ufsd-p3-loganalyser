@@ -3,4 +3,5 @@ vagrant/forum/*
 vagrant/tournament/*
 vagrant/Vagrantfile
 vagrant/newsdata.sql
+vagrant/.vagrant/*
 .DS_Store
