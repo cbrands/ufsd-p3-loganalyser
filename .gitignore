@@ -2,4 +2,5 @@ vagrant/catalog/*
 vagrant/forum/*
 vagrant/tournament/*
 vagrant/Vagrantfile
+vagrant/newsdata.sql
 .DS_Store
