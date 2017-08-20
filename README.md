@@ -21,9 +21,14 @@ cd $BASEDIR/vagrant
 ```
 
 ### Starting the application
+To start the virtual machine and login type the following commands
 ```
 vagrant up
 vagrant ssh
+```
+Go to the /vagrant directory and load the data.
+```
+cd /vagrant
 psql -d news -f newsdata.sql
 ```
 
