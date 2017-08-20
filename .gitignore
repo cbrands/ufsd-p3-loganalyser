@@ -1,3 +1,5 @@
 vagrant/catalog/*
 vagrant/forum/*
 vagrant/tournament/*
+vagrant/Vagrantfile
+.DS_Store
