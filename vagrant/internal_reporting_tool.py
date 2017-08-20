@@ -21,6 +21,7 @@ def connect(database_name="news"):
 
 
 def get_query_results(query):
+    """Open connection, execute query, and return the results"""
     db, c = connect()
     c.execute(query)
     results = c.fetchall()
