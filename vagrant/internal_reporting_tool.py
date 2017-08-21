@@ -29,8 +29,9 @@ def get_query_results(query):
     return results
 
 if __name__=='__main__':
-    print("testing query2")
+    print("testing query3")
     #results = get_query_results("select * from popular_article_view limit 3")
-    results = get_query_results("select * from popular_authors_view")
+    #results = get_query_results("select * from popular_authors_view")
+    results = get_query_results("select date, percent_error from error_log_view")
     for result in results:
         print(result)
