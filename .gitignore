@@ -4,4 +4,5 @@ vagrant/tournament/*
 vagrant/Vagrantfile
 vagrant/newsdata.sql
 vagrant/.vagrant/*
+vagrant/__pycache__/*
 .DS_Store
