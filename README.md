@@ -31,7 +31,14 @@ Go to the /vagrant directory and load the data.
 cd /vagrant
 psql -d news -f newsdata.sql
 ```
-
+To load the views type
+```
+psql -d news -f create_views.sql
+```
+To start the application type 
+```
+python internal_reporting_tool.py
+```
 ## Result
 TODO
 

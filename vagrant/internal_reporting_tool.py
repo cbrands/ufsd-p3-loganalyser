@@ -29,7 +29,7 @@ def get_query_results(query):
     return results
 
 if __name__=='__main__':
-    print("testing database connection and get_query_results")
-    results = get_query_results("select * from articles limit 10")
+    print("testing query1")
+    results = get_query_results("select * from popular_article_view limit 3")
     for result in results:
         print(result)

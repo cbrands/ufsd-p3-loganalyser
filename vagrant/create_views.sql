@@ -1,0 +1,1 @@
+create or replace view popular_article_view as select title,count(*) as views from articles,log where log.path like concat('%',articles.slug) group by title order by views desc
