@@ -5,9 +5,9 @@ This project is my implementation of the log\_analysis project. This is the thir
 
 ## What you get.
 * README.md (this file)
-* internal\_reporting\_tool.py -- Contains the program
-* db\_manager.py -- A class used by internal\_reporting\_tool.py
-* create\_views.sql -- This sql file creates the views
+* vagrant/internal\_reporting\_tool.py -- Contains the program
+* vagrant/db\_manager.py -- A class used by internal\_reporting\_tool.py
+* vagrant/create\_views.sql -- This sql file creates the views
 * .gitignore -- A file to make sure that git does not add the whole virtual machine to the repository. You can ignore this file
 
 ## How to start.
