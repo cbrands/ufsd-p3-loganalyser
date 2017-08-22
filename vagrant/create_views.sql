@@ -1,9 +1,33 @@
-create or replace view popular_article_view as select title, count(*) as views from articles, log where log.path like concat('%',articles.slug) group by title order by views desc;
+-- This view is for answering the following question
+-- 1. What are the most popular three articles of all time?
+CREATE OR replace VIEW popular_article_view AS SELECT title, Count(*) AS views 
+    FROM articles, log 
+    WHERE log.path LIKE Concat('%',articles.slug) 
+    GROUP BY title 
+    ORDER BY views DESC;
 
-create or replace view popular_authors_view as select authors.name, count(*) as views from articles, log, authors where log.path like concat('%',articles.slug) and articles.author = authors.id group by authors.name order by views desc;
+-- This view is for answering the following question
+-- 2. Who are the most popular article authors of all time?
+CREATE OR replace VIEW popular_authors_view AS SELECT authors.NAME, Count(*) AS views 
+    FROM articles, log, authors 
+    WHERE log.path LIKE Concat('%',articles.slug) 
+    AND articles.author = authors.id 
+    GROUP BY authors.NAME 
+    ORDER BY views DESC;
 
-create or replace view error_log_view as select date,total,error, (error::float * 100.0) / total::float as percent_error from
-(select date(time) as date, count(status) as total,
-sum(case status when '200 OK' then 0 else 1 end) as error from log
-group by date(time)) as result
-where (error::float * 100.0) / total::float > 1.0 order by percent_error desc;
+-- This view is for answering the following question
+-- 3. On which days did more than 1% of requests lead to errors?
+CREATE OR replace VIEW error_log_view AS SELECT date, total, error, 
+         (error::float * 100.0) / total::float AS percent_error 
+    FROM ( 
+        SELECT date(time) AS date, 
+        count(status) AS total, 
+        sum( 
+            CASE status 
+                WHEN '200 OK' THEN 0 
+                ELSE 1 
+                END) AS error 
+        FROM log 
+        GROUP BY date(time)) AS result 
+    WHERE (error::float * 100.0) / total::float > 1.0 
+    ORDER BY percent_error DESC;
