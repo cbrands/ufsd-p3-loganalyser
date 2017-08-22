@@ -2,6 +2,7 @@
 
 import psycopg2
 
+
 class DbManager():
     """
     This class manages the database connection and runs queries
@@ -12,8 +13,7 @@ class DbManager():
         db_name: The name of the database
         """
         self.db_name = db_name
-    
-    
+
     def connect(self, database_name="news"):
         """Connects to the database and returns a database connection."""
         try:
@@ -23,7 +23,6 @@ class DbManager():
         except psycopg2.Error:
             print ("Error connecting to the database")
             exit(1)
-
 
     def get_query_results(self, query):
         """Open connection, execute query, and return the results"""
