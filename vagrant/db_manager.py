@@ -21,7 +21,7 @@ class DbManager():
             c = db.cursor()
             return db, c
         except psycopg2.Error:
-            print ("Error connecting to the database")
+            print("Error connecting to the database")
             exit(1)
 
     def get_query_results(self, query):
